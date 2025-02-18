@@ -43,3 +43,16 @@ class Sac_a_dos_dfs:
         else:
             print(f"Poids total : {poids}, Valeur totale : {valeur}")
             return True
+        
+    def affich(self):
+        solution, valeur = self.sad()
+        print("Solution trouvée avec DFS :")
+        print(solution)
+        print("Valeur totale :", valeur)
+        poids_total = sum(self.objets[i][1] for i in range(len(solution)) if solution[i] == 1)
+        print("Poids total :", poids_total)
+
+        if self.evaluate(solution):
+            print("Solution valide.")
+        else:
+            print("Solution invalide.")
